@@ -11,7 +11,7 @@ I buy a lot of books, but suck at reading them. I created this app as a way to g
 
 # API
 
-#Wireframs
+# Wireframs
 
 # MVP/PostMVP
 
