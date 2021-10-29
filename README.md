@@ -30,6 +30,7 @@ authors: [
 # Wireframes
 
 [wireframe](https://imgur.com/a/ZWV7TMN)
+
 [architecture](https://imgur.com/a/CB5hF7G)
 
 # MVP/PostMVP
