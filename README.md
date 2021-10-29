@@ -2,7 +2,7 @@
 
 # Project Links
 
-[github account] (https://lyshia.github.com)
+[github account](https://lyshia.github.com)
 [deployed link coming soon]
 
 # Motivation 
@@ -14,6 +14,17 @@ I buy a lot of books, but suck at reading them. I created this app as a way to g
 Users are able to search for books and then add them to a list for books to read. Once they are in the list, you can mark the book as read, and if the book is read you can write review and rate the book. If you are looking for inspiration for a book to read, you can randomly select a book from the list of unread books. 
 
 # API
+
+https://www.googleapis.com/books/v1/volumes?q=isbn:9780008236182
+
+```
+volumeInfo: {
+title: "The Cat in the Hat",
+authors: [
+"Seuss"
+],
+... }
+```
 
 # Wireframes
 
