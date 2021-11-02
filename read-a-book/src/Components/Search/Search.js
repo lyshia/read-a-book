@@ -4,17 +4,15 @@ import SearchList from './SearchList';
 
 const Search = (props) => {
 	const [book, setBook] = useState([]);
-    const [searchBook, setSearchBook] = useState([]);
+	const [searchBook, setSearchBook] = useState([]);
 
 	const makeApiCall = (book) => {
-		console.log('api call book', { book });
 		fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}`)
 			.then((res) => {
 				return res.json();
 			})
 			.then((data) => {
-				console.log(data);
-				setSearchBook(data);
+				setSearchBook(data.items);
 			});
 	};
 

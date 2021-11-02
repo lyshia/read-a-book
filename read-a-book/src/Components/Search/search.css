@@ -1,0 +1,15 @@
+.showCards {
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width:'20rem';
+   
+}
+
+.card-image {
+    height: 500px;
+    width: 300px;
+}
