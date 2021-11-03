@@ -7,6 +7,7 @@ import BookList from './Books/BookList';
 import Book from './Books/Book';
 import Attributes from './Attributes/Attributes'
 import Contact from './Contact';
+import Random from './Random';
 
 const Routes = () => {
 	const [bookList, setBookList] = useState([]);
@@ -17,11 +18,21 @@ const Routes = () => {
 
 	return (
 		<Switch>
-			<Route path='/' exact component={Home} />
+	
+			<Route
+				path='/' exact
+				render={(props) => (
+					<Home
+						{...props}
+						addSearchBookToBookList={addSearchBookToBookList}
+						book={bookList}
+					/>
+				)}
+			/>
 			<Route path='/About' component={About} />
 			<Route path='/Attributes' component={Attributes} />
 			<Route path='/Search' component={Search} />
-            <Route path='/Contact' component={Contact} />
+			<Route path='/Contact' component={Contact} />
 
 			<Route
 				path='/Search'
@@ -37,6 +48,7 @@ const Routes = () => {
 				path='/Book/:id'
 				render={(props) => <Book {...props} book={bookList} />}
 			/>
+            <Route path='/Random' component={Random} />
 		</Switch>
 	);
 };

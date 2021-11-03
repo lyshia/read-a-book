@@ -1,4 +1,5 @@
 import React  from "react";
+import './styles/contact.css'
 import { Form, Button } from "react-bootstrap";
 import ReCAPTCHA from 'react-google-recaptcha';
 const Contact = () => {
@@ -12,7 +13,7 @@ const Contact = () => {
     }
 
     return (
-        <div>
+        <div className="contact">
             <h1> Contact Me!</h1>
 			<Form>
 				<Form.Group className='mb-3' controlId='formBasicPassword'>

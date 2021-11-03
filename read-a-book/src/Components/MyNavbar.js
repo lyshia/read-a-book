@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav} from "react-bootstrap";
-import './navbar.css'
+import './styles/navbar.css'
 
 
 const MyNavbar = () => {
@@ -15,7 +15,7 @@ const MyNavbar = () => {
 							<Nav.Link href='/'>Home</Nav.Link>
 							<Nav.Link href='/BookList'>My Books</Nav.Link>
 							<Nav.Link href='/ReviewList' > My Reviews</Nav.Link>
-                            <Nav.Link href='/'> Random book</Nav.Link>
+                            <Nav.Link href='/Random'> Random Book</Nav.Link>
                             <Nav.Link href='/About'>About</Nav.Link>
                             <Nav.Link href="/Contact"> Contact</Nav.Link>
 						</Nav>

@@ -3,21 +3,25 @@ import { Card } from 'react-bootstrap';
 
 const Book = (props) => {
 
-	console.log(props);
+	console.log(props.book);
 
-	const book = props.match.params;
+	const book = props.book.map( (book) => {
+		return (
+			<Card>
+				<Card.Img className='card-image-book' variant='top' src={book.volumeInfo.imageLinks.smallThumbnail} />
+				<Card.Body>
+					<Card.Title> {book.volumeInfo.title}</Card.Title>
+					<Card.Subtitle> {book.volumeInfo.authors}</Card.Subtitle>
+					<p> Status </p>
+				</Card.Body>
+			</Card>
+		);
+	})
 
 	return (
 		<div>
 			<h1>Books</h1>
-			<Card>
-				<Card.Img className='card-image' variant='top' src={props} />
-				<Card.Body>
-					<h4> Title: {book.id}</h4>
-					<h4> Author: {}</h4>
-					<p> Finished? </p>
-				</Card.Body>
-			</Card>
+				{book}
 		</div>
 	);
 }

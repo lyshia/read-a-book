@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import BookList from './Books/BookList';
 import Search from './Search/Search';
-import Routes from './Routes';
+
 
 const Home = (props) => {
-	const [bookList, setBookList] = useState([]);
-
-	const addSearchBookToBookList = (book) => {
-		setBookList([...bookList, book]);
-	};
 
 	return (
 		<div>
@@ -16,10 +11,9 @@ const Home = (props) => {
 			<p> Lets read some books</p>
 			<p> Search for a book to add to your read list!</p>
 	
+			<Search addSearchBookToBookList={props.addSearchBookToBookList} />
 
-			<Search addSearchBookToBookList={addSearchBookToBookList} />
-
-			<BookList book={bookList} />
+			<BookList book={props.book} />
 		</div>
 	);
 };
