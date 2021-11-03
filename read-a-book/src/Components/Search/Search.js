@@ -32,7 +32,10 @@ const Search = (props) => {
 				<Button type='submit'>Search</Button>
 			</form>
 
-			<SearchList bookList={searchBook} />
+			<SearchList
+				addSearchBookToBookList={props.addSearchBookToBookList}
+				bookList={searchBook}
+			/>
 		</div>
 	);
 };

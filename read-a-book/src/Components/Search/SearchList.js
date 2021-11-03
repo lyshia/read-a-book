@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import './search.css';
-import add from './img/add.png';
+import addButton from './img/add.png';
 
 const SearchList = (props) => {
 	const books = props.bookList.map((book, i) => {
@@ -10,16 +10,16 @@ const SearchList = (props) => {
 				<Card.Img
 					className='card-image'
 					variant='top'
-					src={book.volumeInfo.imageLinks.thumbnail}
+					src={book.volumeInfo.imageLinks.smallThumbnail}
 					alt={book.volumeInfo.title}
 				/>
 				<Card.Body>
-					<h4> Title: {book.volumeInfo.title}</h4>
-					<h4> Author: {book.volumeInfo.authors}</h4>
+					<Card.Title> Title: {book.volumeInfo.title}</Card.Title>
+					<Card.Subtitle> Author: {book.volumeInfo.authors}</Card.Subtitle>
 					<img
-						src={add}
+						src={addButton}
 						alt='add to book list'
-						onClick={() => props.addSearchBookToBookList(books)}
+						onClick={() => props.addSearchBookToBookList(book)}
 					/>
 				</Card.Body>
 			</Card>

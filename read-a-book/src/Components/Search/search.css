@@ -1,15 +1,17 @@
 .showCards {
-    margin:auto;
+	margin: auto;
     display: flex;
     flex-wrap: wrap;
+	align-items: space-between;
+	justify-content: space-between;
+	
 }
 
 .card {
-    width:'20rem';
-   
+	width: '20rem';
 }
 
 .card-image {
-    height: 500px;
-    width: 300px;
+	height: 500px;
+	width: 300px;
 }
