@@ -7,7 +7,7 @@ const MyNavbar = () => {
 	return (
 		<Navbar bg='light' variant='dark' expand='lg' className='gradient'>
 			<Container>
-				<Navbar.Brand href='#home'>Read a book</Navbar.Brand>
+				<Navbar.Brand href='/'>Read a book</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='me-auto'>
