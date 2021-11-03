@@ -10,6 +10,13 @@
 .card {
     width: 50vw;
     margin-bottom: 5%;
+    background: #1F4963 !important;
+    align-items: center;
+
+     color:#FEE9C9 !important;
+     padding-right: 10px;
+     text-decoration: none;
+
 }
 
 

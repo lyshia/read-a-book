@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
+import '../styles/book.css'
 
 const Book = (props) => {
 
@@ -7,12 +8,43 @@ const Book = (props) => {
 
 	const book = props.book.map( (book) => {
 		return (
-			<Card>
-				<Card.Img className='card-image-book' variant='top' src={book.volumeInfo.imageLinks.smallThumbnail} />
+			<Card className="book-card-body">
+				<Card.Img
+					className='book-card-image'
+					variant='top'
+					src={book.volumeInfo.imageLinks.smallThumbnail}
+				/>
 				<Card.Body>
-					<Card.Title> {book.volumeInfo.title}</Card.Title>
-					<Card.Subtitle> {book.volumeInfo.authors}</Card.Subtitle>
+					<Card.Title className='book-info'> {book.volumeInfo.title}</Card.Title>
+					<Card.Subtitle className='book-info'> {book.volumeInfo.authors}</Card.Subtitle>
 					<p> Status </p>
+					<Form>
+						{['radio'].map((type) => (
+							<div key={`inline-${type}`} className='mb-3'>
+								<Form.Check
+									inline
+									label='unread'
+									name='read-status'
+									type={type}
+									id={`inline-${type}-unread`}
+								/>
+								<Form.Check
+									inline
+									label='currently reading'
+									name='read-status'
+									type={type}
+									id={`inline-${type}-currently-reading`}
+								/>
+								<Form.Check
+									inline
+									label='read'
+									name='read-status'
+									type={type}
+									id={`inline-${type}-read`}
+								/>
+							</div>
+						))}
+					</Form>
 				</Card.Body>
 			</Card>
 		);

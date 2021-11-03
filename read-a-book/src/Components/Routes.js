@@ -8,6 +8,7 @@ import Book from './Books/Book';
 import Attributes from './Attributes/Attributes'
 import Contact from './Contact';
 import Random from './Random';
+import ReviewList from './Reviews/ReviewList';
 
 const Routes = () => {
 	const [bookList, setBookList] = useState([]);
@@ -18,9 +19,9 @@ const Routes = () => {
 
 	return (
 		<Switch>
-	
 			<Route
-				path='/' exact
+				path='/'
+				exact
 				render={(props) => (
 					<Home
 						{...props}
@@ -42,13 +43,14 @@ const Routes = () => {
 			/>
 			<Route
 				path='/BookList'
-				render={(props) => <BookList {...props} book={bookList} />}
+				render={(props) => <BookList book={bookList} />}
 			/>
 			<Route
 				path='/Book/:id'
 				render={(props) => <Book {...props} book={bookList} />}
 			/>
-            <Route path='/Random' component={Random} />
+			<Route path='/ReviewList' component={ReviewList} />
+			<Route path='/Random' component={Random} />
 		</Switch>
 	);
 };

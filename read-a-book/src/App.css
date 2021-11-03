@@ -23,11 +23,11 @@
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: #fee9c9;
 }
 
 .App-link {
-	color: #61dafb;
+	color: #fee9c9;
 }
 
 @keyframes App-logo-spin {
@@ -41,4 +41,12 @@
 
 h1 {
 	font-family: 'Bebas Neue', cursive;
+	padding-top: 20px;
+}
+
+p,
+h1,
+h2,
+h3 {
+	color: #fee9c9;
 }

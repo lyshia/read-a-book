@@ -1,5 +1,24 @@
-.contact {
-    width: 50%;
-    margin: auto;
+.button {
+	width: 100%;
+	background-color: #fee9c9;
+	color: #02897f;
+}
 
+.contact {
+	width: 90%;
+	margin: auto;
+	text-align: left;
+}
+
+.mb-3 {
+	color: #fee9c9;
+}
+
+
+@media (min-width: 1024px) {
+	.contact {
+		width: 50%;
+
+		text-align: left;
+	}
 }

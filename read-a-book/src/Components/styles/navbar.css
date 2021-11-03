@@ -1,7 +1,12 @@
 .gradient{
-    background-image: linear-gradient(75deg, #007F95 50%, #2Ab573 90%);
+    background-image:linear-gradient(90deg, #005D6E 70%, #371B4B ) ;
+    /* background-image: linear-gradient(90deg, #2Ab573 10%, #007F95 40%, #492F91) ; */
 }
 
-.me-auto{
-    color:white;
+
+
+.link {
+     color:#FEE9C9 !important;
+     padding-right: 10px;
+     text-decoration: none;
 }

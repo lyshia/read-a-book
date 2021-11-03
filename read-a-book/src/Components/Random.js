@@ -1,9 +1,14 @@
 import React from "react";
 
-const Random = () => {
-    return (
-        <h1> your next read</h1>
+const Random = (props) => {
 
+    let nextRead = 'Please add a book to your booklist';
+
+    return (
+        <div>
+        <h1> your next read</h1>
+        {nextRead}
+        </div>
     )
 }
 

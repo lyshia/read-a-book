@@ -29,7 +29,11 @@ const Search = (props) => {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<input onChange={handleChange} type='text' />
-				<Button type='submit'>Search</Button>
+				<Button
+					style={{ background: '#145368', color: '#FDE9C9', margin:'10px'}}
+					type='submit'>
+					Search
+				</Button>
 			</form>
 
 			<SearchList
