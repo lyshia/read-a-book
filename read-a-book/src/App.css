@@ -50,3 +50,7 @@ h2,
 h3 {
 	color: #fee9c9;
 }
+
+ul {
+	list-style-type: none;
+}
