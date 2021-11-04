@@ -6,14 +6,15 @@ import { Link } from 'react-router-dom';
 const BookList = (props) => {
 	console.log(props.book);
 
-	let bookList = props.book.map((book) => {
+	let bookList = props.book.map((book, i) => {
 		return (
-			<Link to={'/Book/' + book.volumeInfo.title}>
+			<Link to={'/Book/' + book.id}>
 				<Card className='card'>
 					<Card.Img
 						className='card-image'
 						variant='top'
 						src={book.volumeInfo.imageLinks.smallThumbnail}
+						key={i}
 					/>
 					<Card.Body>
 						<Card.Title> {book.volumeInfo.title}</Card.Title>

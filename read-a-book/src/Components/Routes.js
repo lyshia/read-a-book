@@ -50,7 +50,10 @@ const Routes = () => {
 				render={(props) => <Book {...props} book={bookList} />}
 			/>
 			<Route path='/ReviewList' component={ReviewList} />
-			<Route path='/Random' component={Random} />
+			<Route
+				path='/Random'
+				render={(props) => <Random book={bookList} />}
+			/>
 		</Switch>
 	);
 };
