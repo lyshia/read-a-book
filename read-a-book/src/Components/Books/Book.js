@@ -8,7 +8,7 @@ const Book = (props) => {
 	const [isActive, setActive] = useState(false);
 
 	let currentBook = props.match.params.id;
-
+	console.log("currentbook", currentBook)
 	const makeApiCall = (api) => {
 		fetch(api)
 			.then((res) => {

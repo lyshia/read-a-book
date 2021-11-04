@@ -8,7 +8,7 @@ const BookList = (props) => {
 
 	let bookList = props.book.map((book, i) => {
 		return (
-			<Link to={'/Book/' + book.id}>
+			<Link to={'/Book/' + book.volumeInfo.industryIdentifiers[0].identifier } key={i}>
 				<Card className='card'>
 					<Card.Img
 						className='card-image'

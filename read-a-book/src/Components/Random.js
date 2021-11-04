@@ -1,56 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 const Random = (props) => {
-	const [book, setBook] = useState();
-	
-	const random = Math.floor(Math.random() * props.book.length );
+	const [randomBook, setRandomBook] = useState([]);
+	console.log(props.book);
 
-	let newBook = props.book[random].id;
+	const makeApiCall = async () => {
+		const random = Math.floor(Math.random() * props.book.length);
 
-	const makeApiCall = (api) => {
-		fetch(api)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				console.log('Data', data.items[0]);
-				setBook(data.items[0]);
-			});
+		const newBook =
+			props.book[random].volumeInfo.industryIdentifiers[0].identifier;
+		console.log('new book', newBook);
+
+		let bookUrl = `https://www.googleapis.com/books/v1/volumes?q=isbn:${newBook}`;
+
+		const res = await fetch(bookUrl);
+		const json = await res.json();
+		console.log('api call', json.items[0].volumeInfo);
+		setRandomBook(json.items[0].volumeInfo);
+		// setRead();
 	};
 
-	useEffect(() => {
-		const api = `https://www.googleapis.com/books/v1/volumes?q=id:${newBook}`;
-		makeApiCall(api);
-	}, [newBook]);
+	let nextRead = '';
 
-	// // let nextRead  /*= '';*/
-	// // if (props.book.length > 1) {
-	// // 	makeApiCall();
-	// //     console.log("book", book)
+	// const setRead = () => {
+		console.log("random books" , randomBook.imageLinks);
+		if (randomBook.imageLinks) {
+			nextRead = (
+				<Card className='book-card-body'>
+					<Card.Img
+						className='book-card-image'
+						variant='top'
+						src={randomBook.imageLinks.smallThumbnail}
+					/>
+					<Card.Body>
+						<Card.Title className='book-info'>{randomBook.title}</Card.Title>
+						<Card.Subtitle className='book-info'>
+							{randomBook.authors}
+						</Card.Subtitle>
+					</Card.Body>
+				</Card>
+			);
+		} 
+	// };
 
-	// console.log('book info', book);
-	let nextRead = (
-		<Card className='book-card-body'>
-			<Card.Img
-				className='book-card-image'
-				variant='top'
-				src={book.volumeInfo.imageLinks.smallThumbnail}
-			/>
-			<Card.Body>
-				<Card.Title className='book-info'>{book.volumeInfo.title}</Card.Title>
-				<Card.Subtitle className='book-info'>
-					{book.volumeInfo.authors}
-				</Card.Subtitle>
-			</Card.Body>
-		</Card>
-	);
+	const handleClick = (e) => {
+		e.preventDefault();
+		makeApiCall();
+		// setRead();
+	};
 
 	return (
 		<div>
 			<h1> your next read</h1>
-			{/* <button onClick={makeApiCall}>What will it be?</button> */ }
-			{nextRead}
+			<Button onClick={handleClick}>What will it be?</Button>
+			<div> {nextRead} </div>
 		</div>
 	);
 };

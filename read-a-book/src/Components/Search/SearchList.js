@@ -17,7 +17,7 @@ const SearchList = (props) => {
 					<Card.Title> {book.volumeInfo.title}</Card.Title>
 					<Card.Subtitle>{book.volumeInfo.authors}</Card.Subtitle>
 					<img
-						class='add-button'
+						className='add-button'
 						src={addButton}
 						alt='add to book list'
 						onClick={() => props.addSearchBookToBookList(book)}
