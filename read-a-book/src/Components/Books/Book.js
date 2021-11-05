@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
+import ReviewList from '../Reviews/ReviewList';
 import '../styles/book.css';
 
 const Book = (props) => {
 	const [radioValue, setRadioValue] = useState();
 	const [book, setBook] = useState();
-	const [isActive, setActive] = useState(false);
+	const [review, setReview] = useState();
 
+	//get the current book and call api again to show the information.
 	let currentBook = props.match.params.id;
-	console.log("currentbook", currentBook)
 	const makeApiCall = (api) => {
 		fetch(api)
 			.then((res) => {
@@ -26,30 +27,39 @@ const Book = (props) => {
 
 	let showText = '';
 
+	//for the radio buttons
 	const onSelected = (event) => {
 		setRadioValue(event.target.value);
 		if (event.target.value === 'read') {
 			console.log('AHHHHHHHH!!!');
-			setActive(true)
+
 			// showText = (
-				// <Form.Group className='mb-3 review-text' controlId='writeReview'>
-				// 	<Form.Label>Write a review</Form.Label>
-				// 	<Form.Control as='textarea' rows={3} />
-				// 	<Button
-				// 		style={{
-				// 			background: '#145368',
-				// 			color: '#FDE9C9',
-				// 			margin: '10px',
-				// 		}}
-				// 		type='submit'>
-				// 		Submit Review
-				// 	</Button>
-				// </Form.Group>
+			// <Form.Group className='mb-3 review-text' controlId='writeReview'>
+			// 	<Form.Label>Write a review</Form.Label>
+			// 	<Form.Control as='textarea' rows={3} />
+			// 	<Button
+			// 		style={{
+			// 			background: '#145368',
+			// 			color: '#FDE9C9',
+			// 			margin: '10px',
+			// 		}}
+			// 		type='submit'>
+			// 		Submit Review
+			// 	</Button>
+			// </Form.Group>
 			// );
 			showText = 'hello!';
-		} else {
-			setActive(false)
 		}
+	};
+
+	//review
+	const handleChange = (event) => {
+		setReview(event.target.value);
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		props.addReviewtoReviewList(review, book);
 	};
 
 	console.log('radio value', radioValue);
@@ -99,22 +109,21 @@ const Book = (props) => {
 								value='read'
 								onChange={onSelected}
 							/>
-							<Form.Group className={ isActive ?'mb-3 review-text' :null}
-								
-								controlId='writeReview'>
+							<Form.Group className='mb-3 review-text' controlId='writeReview'>
 								<Form.Label>Write a review</Form.Label>
-								<Form.Control as='textarea' rows={3} />
+								<Form.Control as='textarea' rows={3} onChange={handleChange} />
 								<Button
 									style={{
 										background: '#145368',
 										color: '#FDE9C9',
 										margin: '10px',
 									}}
-									type='submit'>
+									type='submit'
+									onClick={handleSubmit}>
 									Submit Review
 								</Button>
 							</Form.Group>
-							<Card.Text>{showText}</Card.Text>
+							{showText}
 						</div>
 					</Form>
 				</Card.Body>
