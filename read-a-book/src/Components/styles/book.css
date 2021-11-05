@@ -1,23 +1,35 @@
 .book-card-body {
-    margin:auto;
-    background: #1F4963 !important;
-    width: 60vw;
-    align-items: center;
+	margin: auto;
+	background: #1f4963 !important;
+	width: 60vw;
+	align-items: center;
 }
 
 .book-card-image {
-    width: 30vw !important; 
-    padding-top: 20px;
+	width: 30vw !important;
+	padding-top: 20px;
 }
 
 .book-info {
-    color: #FDE9C9;
+	color: #fde9c9;
 }
 
 .review-text-visible {
-    display: block !important;
-} 
+	display: block !important;
+}
 
 .review-text-invisible {
- display: none !important;
+	display: none !important;
 }
+
+@media screen and (min-width: 1024px) {
+	.book-card-body {
+		width: 30vw !important;
+		
+	}
+
+	.book-card-image {
+		width: 15vw !important;
+	}
+}
+
