@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap';
 
 const Random = (props) => {
 	const [randomBook, setRandomBook] = useState([]);
-	console.log(props.book);
 
 	const makeApiCall = async () => {
 		const random = Math.floor(Math.random() * props.book.length);
@@ -21,7 +20,6 @@ const Random = (props) => {
 
 	let nextRead = '';
 
-	console.log('random books', randomBook.imageLinks);
 	if (randomBook.imageLinks) {
 		nextRead = (
 			<Card className='book-card-body'>

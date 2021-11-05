@@ -1,31 +1,28 @@
-import React from "react";
+import React from 'react';
+
+/// NOT FINISHED
 
 const ReviewList = (props) => {
-    
-    console.log("props.reviewlist" , props.reviewList);
+	console.log('props.reviewlist', props.reviewList);
 
+	// console.log(props.reviewList[1].book.volumeInfo.title);
 
-    // console.log(props.reviewList[1].book.volumeInfo.title);
+	const reviews = props.reviewList.map((rvw) => {
+		console.log('review', rvw);
 
-     const reviews = props.reviewList.map((rvw) =>  {
-        console.log("review", rvw);
+		return [
+			<div>
+				<p> Review: {rvw.review}</p>
+			</div>,
+		];
+	});
 
-        return ([
-					<div>
-						<p> Title: {rvw.book.volumeInfo.authors}</p>
-						<p> Review: {rvw.review}</p>
-					</div>
-        ]);
-    })
-
-
-    return(
-        <div>
-            <h1> Reviews</h1>
-             {reviews} 
-        
-        </div>
-    )
-}
+	return (
+		<div>
+			<h1> Reviews</h1>
+			{reviews}
+		</div>
+	);
+};
 
 export default ReviewList;

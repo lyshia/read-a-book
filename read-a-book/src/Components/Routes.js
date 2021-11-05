@@ -22,7 +22,7 @@ const Routes = () => {
 		// setReviewList([...reviewList, review], [...bookList, book]);
 		setReviewList([
 			{review: [...reviewList, review]},
-			{book: book},
+			{book: [book]},
 		]);
 	};
 
