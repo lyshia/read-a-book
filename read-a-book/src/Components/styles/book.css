@@ -1,12 +1,12 @@
 .book-card-body {
     margin:auto;
     background: #1F4963 !important;
-    width: 30vw;
+    width: 60vw;
     align-items: center;
 }
 
 .book-card-image {
-    width: 15vw !important; 
+    width: 30vw !important; 
     padding-top: 20px;
 }
 
@@ -14,6 +14,10 @@
     color: #FDE9C9;
 }
 
-/* .review-text {
-    display: none !important;
-} */
+.review-text-visible {
+    display: block !important;
+} 
+
+.review-text-invisible {
+ display: none !important;
+}

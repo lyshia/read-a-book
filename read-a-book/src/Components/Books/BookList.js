@@ -4,7 +4,6 @@ import '../styles/cards.css';
 import { Link } from 'react-router-dom';
 
 const BookList = (props) => {
-	console.log(props.book);
 
 	let bookList = props.book.map((book, i) => {
 		return (

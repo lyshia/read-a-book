@@ -5,17 +5,12 @@ import About from './About';
 import Search from './Search/Search';
 import BookList from './Books/BookList';
 import Book from './Books/Book';
-import Attributes from './Attributes/Attributes'
+import Attributes from './Attributes/Attributes';
 import Contact from './Contact';
 import Random from './Random';
 import ReviewList from './Reviews/ReviewList';
 
 const Routes = () => {
-
-	const [state, setState] = useState( {
-		bookList: [],
-	})
-	
 	const [bookList, setBookList] = useState([]);
 	const [reviewList, setReviewList] = useState([]);
 
@@ -24,8 +19,12 @@ const Routes = () => {
 	};
 
 	const addReviewtoReviewList = (review, book) => {
-		setReviewList([...reviewList, review]);
-	}
+		// setReviewList([...reviewList, review], [...bookList, book]);
+		setReviewList([
+			{review: [...reviewList, review]},
+			{book: book},
+		]);
+	};
 
 	return (
 		<Switch>
@@ -57,10 +56,18 @@ const Routes = () => {
 			/>
 			<Route
 				path='/Book/:id'
-				render={(props) => <Book {...props} book={bookList} addReviewtoReviewList={addReviewtoReviewList}  />}
+				render={(props) => (
+					<Book
+						{...props}
+						book={bookList}
+						addReviewtoReviewList={addReviewtoReviewList}
+					/>
+				)}
 			/>
-			<Route path='/ReviewList' 
-			render={(props) => <ReviewList review={reviewList} />} />
+			<Route
+				path='/ReviewList'
+				render={(props) => <ReviewList {...props} reviewList={reviewList}  book={bookList}/>}
+			/>
 			<Route
 				path='/Random'
 				render={(props) => <Random {...props} book={bookList} />}

@@ -5,6 +5,7 @@ import '../styles/book.css';
 
 const Book = (props) => {
 	const [radioValue, setRadioValue] = useState();
+	const [active, setActive] = useState(false);
 	const [book, setBook] = useState();
 	const [review, setReview] = useState();
 
@@ -25,30 +26,14 @@ const Book = (props) => {
 		makeApiCall(api);
 	}, [currentBook]);
 
-	let showText = '';
-
 	//for the radio buttons
 	const onSelected = (event) => {
 		setRadioValue(event.target.value);
 		if (event.target.value === 'read') {
-			console.log('AHHHHHHHH!!!');
-
-			// showText = (
-			// <Form.Group className='mb-3 review-text' controlId='writeReview'>
-			// 	<Form.Label>Write a review</Form.Label>
-			// 	<Form.Control as='textarea' rows={3} />
-			// 	<Button
-			// 		style={{
-			// 			background: '#145368',
-			// 			color: '#FDE9C9',
-			// 			margin: '10px',
-			// 		}}
-			// 		type='submit'>
-			// 		Submit Review
-			// 	</Button>
-			// </Form.Group>
-			// );
-			showText = 'hello!';
+			setActive(true);
+		}
+		else {
+			setActive(false);
 		}
 	};
 
@@ -61,8 +46,6 @@ const Book = (props) => {
 		event.preventDefault();
 		props.addReviewtoReviewList(review, book);
 	};
-
-	console.log('radio value', radioValue);
 
 	let bookDetail = '';
 
@@ -109,7 +92,7 @@ const Book = (props) => {
 								value='read'
 								onChange={onSelected}
 							/>
-							<Form.Group className='mb-3 review-text' controlId='writeReview'>
+							<Form.Group className={active ? 'mb-3 review-text-visible' : 'mb-3 review-text-invisible'} controlId='writeReview'>
 								<Form.Label>Write a review</Form.Label>
 								<Form.Control as='textarea' rows={3} onChange={handleChange} />
 								<Button
@@ -123,7 +106,7 @@ const Book = (props) => {
 									Submit Review
 								</Button>
 							</Form.Group>
-							{showText}
+						
 						</div>
 					</Form>
 				</Card.Body>
