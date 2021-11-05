@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/read-a-book/static/css/main.6468e8e6.chunk.css",
-    "main.js": "/read-a-book/static/js/main.31b5adc2.chunk.js",
-    "main.js.map": "/read-a-book/static/js/main.31b5adc2.chunk.js.map",
+    "main.css": "/read-a-book/static/css/main.5926df81.chunk.css",
+    "main.js": "/read-a-book/static/js/main.940b642f.chunk.js",
+    "main.js.map": "/read-a-book/static/js/main.940b642f.chunk.js.map",
     "runtime-main.js": "/read-a-book/static/js/runtime-main.aec1e889.js",
     "runtime-main.js.map": "/read-a-book/static/js/runtime-main.aec1e889.js.map",
     "static/css/2.8c0e6b67.chunk.css": "/read-a-book/static/css/2.8c0e6b67.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.5044ce0c.chunk.js.map": "/read-a-book/static/js/3.5044ce0c.chunk.js.map",
     "index.html": "/read-a-book/index.html",
     "static/css/2.8c0e6b67.chunk.css.map": "/read-a-book/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.6468e8e6.chunk.css.map": "/read-a-book/static/css/main.6468e8e6.chunk.css.map",
+    "static/css/main.5926df81.chunk.css.map": "/read-a-book/static/css/main.5926df81.chunk.css.map",
     "static/js/2.fcc08113.chunk.js.LICENSE.txt": "/read-a-book/static/js/2.fcc08113.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.aec1e889.js",
     "static/css/2.8c0e6b67.chunk.css",
     "static/js/2.fcc08113.chunk.js",
-    "static/css/main.6468e8e6.chunk.css",
-    "static/js/main.31b5adc2.chunk.js"
+    "static/css/main.5926df81.chunk.css",
+    "static/js/main.940b642f.chunk.js"
   ]
 }
