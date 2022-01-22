@@ -4,6 +4,7 @@ import '../styles/cards.css';
 import addButton from './img/add.png';
 
 const SearchList = (props) => {
+	console.log("booklist type of",props.bookList)
 	const books = props.bookList.map((book, i) => {
 		return (
 			<Card className='card' key={i}>

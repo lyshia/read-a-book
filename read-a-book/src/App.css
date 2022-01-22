@@ -48,7 +48,8 @@ p,
 h1,
 h2,
 h3,
-li{
+li,
+a{
 	color: #fee9c9;
 }
 

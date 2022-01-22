@@ -13,14 +13,15 @@ const About = () => {
                 <li> Once you click search, find the book and click on the add symbol to add the book to your list</li>
                 <li>Once the book is on your list, you can click on the book to view more information</li>
                 <li>To mark the book as read, click on the book and then check "read"</li>
-                <li> Once the book is read, you can then leave a review </li>
+                <li> Currently this is not tied to a database, so it is session based. Updates to come soon.</li>
             </ul>
             <h3> How to view Reviews</h3>
             <ul>
-                <li> Click </li>
+                <li> Under Construction </li>
             </ul>
             <h3> Need help deciding what to read next?</h3>
             <ul>
+                <li> After you have added books to your list</li>
                 <li> Click on "Random" tab</li>
                 <li> Your next great read will appear!</li>
             </ul>

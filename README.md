@@ -83,6 +83,7 @@ Post MVP
 # Additional Libraries
 
 Bootstrap
+React Google Recaptcha
 
 # Code Snippet
 
