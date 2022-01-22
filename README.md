@@ -4,7 +4,7 @@
 
 [github account](https://lyshia.github.com)
 
-[deployed link coming soon]
+[deployed link](https://lyshia.github.io/read-a-book)
 
 # Motivation 
 
